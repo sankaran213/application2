@@ -44,19 +44,27 @@ export default function Offerings() {
       </h2>
 
       {/* Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center">
+      <div
+        className="grid gap-8 justify-center"
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+        }}
+      >
         {offerings.map((offering, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg rounded-xl border border-gray-200 hover:shadow-xl transition-shadow flex items-center justify-center relative"
-            style={{ width: "593.45px", height: "300px" }}
+            className="bg-white shadow-md rounded-lg border border-gray-300 hover:shadow-lg transition-shadow flex items-center justify-start p-6 relative"
+            style={{ width: "100%", maxWidth: "360px", height: "200px" }}
           >
-            {/* Title and Description at Top-Left */}
-            <div className="absolute top-0 left-0 p-12">
-              <h3 className="text-lg font-semibold mb-2 text-gray-800">
+            {/* Title and Description */}
+            <div>
+              <h3 className="absolute top-5 left-5 text-lg font-bold mb-2 text-gray-900">
                 {offering.title}
               </h3>
-              <p className="text-gray-600">{offering.description}</p>
+              <p className="absolute top-12 left-5  text-sm text-gray-700">
+                {offering.description}
+              </p>
             </div>
           </div>
         ))}
