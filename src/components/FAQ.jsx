@@ -9,20 +9,22 @@ const faqs = [
   {
     question: "How Uniplane works?",
     answer:
-      "Our free trial gives you full access to all features for 14 days...",
+      "Uniplane works by offering a unified platform that simplifies the deployment, management, and monitoring of GenAI applications. It integrates various tools for model deployment, performance tracking, and optimization, ensuring smooth operation and scalability across AI models.",
   },
   {
     question: "How to choose an offering from Uniplane?",
-    answer: "Yes, you can modify your subscription at any time...",
+    answer:
+      "Choose an offering from Uniplane based on your GenAI application's deployment, monitoring, and performance needs. Select the one that matches your infrastructure and feature requirements.",
   },
   {
     question: "How to onboard our application on Uniplane?",
-    answer: "We implement enterprise-grade security measures...",
+    answer:
+      "To onboard your application on Uniplane, follow their integration guidelines, which typically involve uploading your application, configuring necessary resources, and setting up monitoring and performance parameters within the platform.",
   },
   {
     question: "Does my enterprise workflow fits into Uniplane?",
     answer:
-      "Enterprise customers get dedicated support, custom integrations...",
+      "If your workflow involves GenAI applications needing centralized management and monitoring, it likely fits into Uniplane.",
   },
 ];
 
