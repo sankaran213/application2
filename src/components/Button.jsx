@@ -10,7 +10,7 @@ const OverlapImageButton = ({
     <div className="relative w-full max-w-5xl mx-auto text-center mb-10">
       {/* Background Image */}
       <img
-        src="public/Group 1707478078 (1).png"
+        src="Group 1707478078 (1).png"
         alt="Background"
         className="w-full h-auto rounded-xl"
       />

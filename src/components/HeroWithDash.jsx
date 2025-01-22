@@ -29,7 +29,7 @@ export default function HeroWithNavbar() {
         {/* Right Section */}
         <div className="md:w-7/12 relative right-[-12%] overflow-hidden">
           <img
-            src="public/Dashboard Image.png" // Path to the uploaded image
+            src="Dashboard Image.png" // Path to the uploaded image
             alt="Dashboard Preview"
             className="w-full max-w-l rounded-lg "
           />
