@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "What is Uniplane?",
+    question: "What is Genai ?",
     answer:
       "Uniplane is a comprehensive platform for managing and monitoring GenAI applications...",
   },
