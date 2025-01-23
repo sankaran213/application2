@@ -2,29 +2,29 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "What is Genai ?",
+    question: "What is LLMOps services ?",
     answer:
-      "Uniplane is a comprehensive platform for managing and monitoring GenAI applications...",
+      " LLMops services is a comprehensive platform for managing and monitoring GenAI applications...",
   },
   {
-    question: "How Uniplane works?",
+    question: "How LLMOps services works?",
     answer:
-      "Uniplane works by offering a unified platform that simplifies the deployment, management, and monitoring of GenAI applications. It integrates various tools for model deployment, performance tracking, and optimization, ensuring smooth operation and scalability across AI models.",
+      " LLMops services works by offering a unified platform that simplifies the deployment, management, and monitoring of GenAI applications. It integrates various tools for model deployment, performance tracking, and optimization, ensuring smooth operation and scalability across AI models.",
   },
   {
-    question: "How to choose an offering from Uniplane?",
+    question: "How to choose an offering from LLMOps Services?",
     answer:
-      "Choose an offering from Uniplane based on your GenAI application's deployment, monitoring, and performance needs. Select the one that matches your infrastructure and feature requirements.",
+      "Choose an offering from LLMOps Services based on your GenAI application's deployment, monitoring, and performance needs. Select the one that matches your infrastructure and feature requirements.",
   },
   {
-    question: "How to onboard our application on Uniplane?",
+    question: "How to onboard our application on LLMOps services?",
     answer:
-      "To onboard your application on Uniplane, follow their integration guidelines, which typically involve uploading your application, configuring necessary resources, and setting up monitoring and performance parameters within the platform.",
+      "To onboard your application on  LLMOps services, follow their integration guidelines, which typically involve uploading your application, configuring necessary resources, and setting up monitoring and performance parameters within the platform.",
   },
   {
-    question: "Does my enterprise workflow fits into Uniplane?",
+    question: "Does my enterprise workflow fits into  LLMOps services?",
     answer:
-      "If your workflow involves GenAI applications needing centralized management and monitoring, it likely fits into Uniplane.",
+      "If your workflow involves GenAI applications needing centralized management and monitoring, it likely fits into  LLMOps services.",
   },
 ];
 

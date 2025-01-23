@@ -40,7 +40,7 @@ export default function Offerings() {
     <div className="max-w-7xl mx-auto px-6 py-12">
       {/* Title */}
       <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 to-blue-700 bg-clip-text text-transparent">
-        Genai Offerings
+        LLMOps Offerings
       </h2>
 
       {/* Grid Layout */}
