@@ -18,7 +18,8 @@ const OverlapImageButton = ({
       {/* Main Text */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-black px-4">
         <h1 className="text-5xl md:text-5xl font-semibold leading-tight">
-          FASTEN AND EASIER YOUR <br></br> TASK WITH UNIPLANE!
+          FASTEN AND EASIER YOUR <br></br> TASK WITH <br></br>
+          GENAI LLMOps Services!
         </h1>
 
         {/* Overlapping Button */}
