@@ -1,102 +1,230 @@
-const offerings = [
+// const offerings = [
+//   {
+//     title: "Onboard A GenAI App",
+//     description: "Add a GenAI app for management and monitoring",
+//     link: "/onboard-genai-app",
+//     icon: "📄", // Replace with actual icon
+//   },
+//   {
+//     title: "GenAI App Playground",
+//     description: "Build a GenAI app with a few clicks",
+//     link: "/genai-app-playground",
+//     icon: "⚙️",
+//   },
+//   {
+//     title: "LLMOps Observability",
+//     description: "Unified view to monitor GenAI app metrics",
+//     link: "/llmops-observability",
+//     icon: "📊",
+//   },
+//   {
+//     title: "LLMOps Evaluation",
+//     description: "Explore LLM evaluation metrics",
+//     link: "/llmops-evaluation",
+//     icon: "🔍",
+//   },
+//   {
+//     title: "Explainability",
+//     description: "Understand the metrics and scores with deeper insights",
+//     link: "/explainability",
+//     icon: "📖",
+//   },
+//   {
+//     title: "FinOps",
+//     description: "Manage and observe Cloud and LLM costs",
+//     link: "/finops",
+//     icon: "💰",
+//   },
+//   {
+//     title: "Prompt Management",
+//     description: "Manage prompt templates efficiently using a prompt library",
+//     link: "/prompt-management",
+//     icon: "✍️",
+//   },
+//   {
+//     title: "LLM Router",
+//     description:
+//       "Use the best fit LLM for prompts and responses in a multi-LLM environment",
+//     link: "/llm-router",
+//     icon: "🔀",
+//   },
+//   {
+//     title: "AI Agents Playground",
+//     description: "Build an AI agent app with a few clicks",
+//     link: "/ai-agents-playground",
+//     icon: "🤖",
+//   },
+//   {
+//     title: "AgentOps Observability",
+//     description: "Unified view to monitor AI agent app metrics",
+//     link: "/agentops-observability",
+//     icon: "📡",
+//   },
+// ];
+
+// export default function Offerings() {
+//   return (
+//     <div className="max-w-7xl mx-auto px-6 py-12">
+//       <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 to-blue-700 bg-clip-text text-transparent">
+//         LLMOps Offerings
+//       </h2>
+
+//       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+//         {offerings.map((offering, index) => (
+//           <div
+//             key={index}
+//             className="bg-white shadow-lg rounded-2xl border border-gray-200 p-6 flex flex-col items-start hover:shadow-xl transition-all"
+//           >
+//             <div className="text-3xl mb-4">{offering.icon}</div>
+//             <h3 className="text-lg font-bold text-gray-900 mb-2">
+//               {offering.title}
+//             </h3>
+//             <p className="text-sm text-gray-700 mb-4">{offering.description}</p>
+//             <a
+//               href={offering.link}
+//               className="text-blue-600 text-sm font-semibold mt-auto"
+//             >
+//               Explore the Solution
+//             </a>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+import React from "react";
+
+const createIcon = (name) => (
+  <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+    {name[0]}
+  </div>
+);
+
+const createBlankCard = (rowSpan, colSpan) => ({
+  icon: <div className="w-8 h-16" />,
+  title: "",
+  description: "",
+  link: "#",
+  isBlank: true,
+  rowSpan,
+  colSpan,
+});
+
+const solutions = [
+  // Big blank card (spans 2 rows in first column)
+  createBlankCard(2, 4),
+
+  // Row 1 - 3 cards (columns 2-4)
   {
+    icon: createIcon("Settings"),
     title: "Onboard A GenAI App",
     description: "Add a GenAI app for management and monitoring",
-    link: "/onboard-genai-app",
+    link: "#",
   },
   {
+    icon: createIcon("Bot"),
     title: "GenAI App Playground",
-    description: "Build a GenAI app with just a few clicks",
-    link: "/genai-app-playground",
+    description: "Build a GenAI app with few clicks",
+    link: "#",
   },
   {
+    icon: createIcon("Eye"),
     title: "LLMOps Observability",
-    description: "Gain a unified view to monitor GenAI app metrics",
-    link: "/llmops-observability",
+    description: "Unified view to monitor GenAI app metrics",
+    link: "#",
   },
+  createBlankCard(2, 4),
+  // Row 2 - 3 cards (columns 2-4)
   {
+    icon: createIcon("Search"),
     title: "LLMOps Evaluation",
-    description: "Explore comprehensive LLM evaluation metrics",
-    link: "/llmops-evaluation",
+    description: "Explore LLM evaluation metrics",
+    link: "#",
   },
   {
+    icon: createIcon("Lightbulb"),
     title: "Explainability",
-    description: "Understand metrics and scores with deeper insights",
-    link: "/explainability",
+    description: "Understand the metrics and scores with deeper insights",
+    link: "#",
   },
   {
+    icon: createIcon("BarChart"),
     title: "FinOps",
-    description: "Manage and observe cloud and LLM costs efficiently",
-    link: "/finops",
+    description: "Manage and observe Cloud and LLM costs",
+    link: "#",
   },
+
+  // Row 3 - 4 cards (full width)
   {
+    icon: createIcon("Settings"),
     title: "Prompt Management",
-    description: "Organize prompt templates using an efficient library",
-    link: "/prompt-management",
+    description: "Manage prompts templates efficiently using prompt library",
+    link: "#",
   },
   {
+    icon: createIcon("GitFork"),
     title: "LLM Router",
-    description: "Route prompts to the best-fit LLM for responses",
-    link: "/llm-router",
+    description:
+      "Use the best fit LLM for prompts and response in a multi-LLM environment",
+    link: "#",
   },
   {
+    icon: createIcon("Bot"),
     title: "AI Agents Playground",
-    description: "Build AI agent applications quickly and easily",
-    link: "/ai-agents-playground",
+    description: "Build an AI agent app with few clicks",
+    link: "#",
   },
   {
+    icon: createIcon("LineChart"),
     title: "AgentOps Observability",
-    description: "Monitor AI agent app metrics from a unified dashboard",
-    link: "/agentops-observability",
+    description: "Unified view to monitor AI agent app metrics",
+    link: "#",
   },
 ];
 
 export default function Offerings() {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12">
-      {/* Title */}
+    <div className="container mx-auto px-4 py-12">
       <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 to-blue-700 bg-clip-text text-transparent">
         LLMOps Offerings
       </h2>
-
-      {/* Grid Layout */}
-      <div
-        className="grid gap-8 justify-center"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-        }}
-      >
-        {offerings.map((offering, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-min">
+        {solutions.map((solution, index) => (
           <div
             key={index}
-            className="bg-white shadow-md rounded-lg border border-gray-300 hover:shadow-lg transition-shadow flex flex-col justify-between p-6"
-            style={{ width: "318px", height: "335px" }}
+            className={`${
+              solution.isBlank
+                ? "bg-white shadow-lg"
+                : "bg-white shadow-md hover:shadow-xl transition-shadow duration-300"
+            } 
+            ${solution.rowSpan ? `row-span-${solution.rowSpan}` : ""}
+            ${solution.colSpan ? `xl:col-span-${solution.colSpan}` : ""}
+            rounded-lg overflow-hidden`}
           >
-            {/* Logo */}
-            <div className="flex items-center mb-4">
-              <img
-                src="Logo.png" // Replace with the actual logo path
-                alt="Logo"
-                className="w-[89px] h-[33px]"
-              />
-            </div>
-
-            {/* Title and Description */}
-            <div className="-mt-2">
-              <h3 className="text-lg font-bold text-gray-900 mb-1">
-                {offering.title}
-              </h3>
-              <p className="text-sm text-gray-700">{offering.description}</p>
-            </div>
-
-            {/* Link */}
-            <a
-              href={offering.link}
-              className="text-blue-600 text-sm font-semibold mt-2"
-            >
-              <u>Explore the Product</u>
-            </a>
+            {!solution.isBlank ? (
+              <>
+                <div className="p-6">
+                  <div className="mb-4 text-gray-600">{solution.icon}</div>
+                  <h3 className="text-lg font-semibold mb-2">
+                    {solution.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-4">
+                    {solution.description}
+                  </p>
+                </div>
+                <div className="px-6 pb-6">
+                  <a
+                    href={solution.link}
+                    className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                  >
+                    Explore the Solution
+                  </a>
+                </div>
+              </>
+            ) : (
+              <div className="w-full h-full" /> // Empty space for blank card
+            )}
           </div>
         ))}
       </div>
