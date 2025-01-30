@@ -2,36 +2,52 @@ const offerings = [
   {
     title: "Onboard A GenAI App",
     description: "Add a GenAI app for management and monitoring",
+    link: "/onboard-genai-app",
   },
   {
     title: "GenAI App Playground",
-    description: "Build a GenAI app with few clicks",
+    description: "Build a GenAI app with just a few clicks",
+    link: "/genai-app-playground",
   },
   {
     title: "LLMOps Observability",
-    description: "Unified view to monitor GenAI app metrics",
+    description: "Gain a unified view to monitor GenAI app metrics",
+    link: "/llmops-observability",
   },
-  { title: "LLMOps Evaluation", description: "Explore LLM evaluation metrics" },
+  {
+    title: "LLMOps Evaluation",
+    description: "Explore comprehensive LLM evaluation metrics",
+    link: "/llmops-evaluation",
+  },
   {
     title: "Explainability",
-    description: "Understand the metrics and scores with deeper insights",
+    description: "Understand metrics and scores with deeper insights",
+    link: "/explainability",
   },
-  { title: "FinOps", description: "Manage and observe Cloud and LLM costs" },
+  {
+    title: "FinOps",
+    description: "Manage and observe cloud and LLM costs efficiently",
+    link: "/finops",
+  },
   {
     title: "Prompt Management",
-    description: "Manage prompts templates efficiently using prompt library",
+    description: "Organize prompt templates using an efficient library",
+    link: "/prompt-management",
   },
   {
     title: "LLM Router",
-    description: "Use the best-fit LLM for prompts and response",
+    description: "Route prompts to the best-fit LLM for responses",
+    link: "/llm-router",
   },
   {
     title: "AI Agents Playground",
-    description: "Build an AI agent app with few clicks",
+    description: "Build AI agent applications quickly and easily",
+    link: "/ai-agents-playground",
   },
   {
     title: "AgentOps Observability",
-    description: "Unified view to monitor AI agent app metrics",
+    description: "Monitor AI agent app metrics from a unified dashboard",
+    link: "/agentops-observability",
   },
 ];
 
@@ -54,18 +70,33 @@ export default function Offerings() {
         {offerings.map((offering, index) => (
           <div
             key={index}
-            className="bg-white shadow-md rounded-lg border border-gray-300 hover:shadow-lg transition-shadow flex items-center justify-start p-6 relative"
-            style={{ width: "100%", maxWidth: "360px", height: "200px" }}
+            className="bg-white shadow-md rounded-lg border border-gray-300 hover:shadow-lg transition-shadow flex flex-col justify-between p-6"
+            style={{ width: "318px", height: "335px" }}
           >
+            {/* Logo */}
+            <div className="flex items-center mb-4">
+              <img
+                src="Logo.png" // Replace with the actual logo path
+                alt="Logo"
+                className="w-[89px] h-[33px]"
+              />
+            </div>
+
             {/* Title and Description */}
-            <div>
-              <h3 className="absolute top-5 left-5 text-lg font-bold mb-2 text-gray-900">
+            <div className="-mt-2">
+              <h3 className="text-lg font-bold text-gray-900 mb-1">
                 {offering.title}
               </h3>
-              <p className="absolute top-12 left-5  text-sm text-gray-700">
-                {offering.description}
-              </p>
+              <p className="text-sm text-gray-700">{offering.description}</p>
             </div>
+
+            {/* Link */}
+            <a
+              href={offering.link}
+              className="text-blue-600 text-sm font-semibold mt-2"
+            >
+              <u>Explore the Product</u>
+            </a>
           </div>
         ))}
       </div>

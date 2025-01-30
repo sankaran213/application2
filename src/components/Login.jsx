@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [error, setError] = useState("");
-  const navigate = useNavigate(); // Initialize the navigate function
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -11,180 +11,81 @@ const Login = () => {
     const email = formData.get("email");
     const password = formData.get("password");
 
-    // Mock login validation (replace this with your actual logic)
+    // Mock validation (Replace with actual authentication logic)
     if (email === "test@example.com" && password === "password") {
       alert("Login successful!");
-      navigate("/home"); // Navigate to '/home' after successful login
+      navigate("/home");
     } else {
       setError("Invalid email or password.");
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700">
-      <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md text-center">
-        <h1 className="text-2xl font-bold text-gray-800 mb-6">Log In</h1>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        {/* Logo */}
+        <div className="flex flex-col items-center mb-6">
+          <img src="Logo.png" alt="CogentIQ Logo" className="h-12 mb-2" />
+          <h2 className="text-gray-800 text-lg font-semibold">
+            Login to LLMOps Services
+          </h2>
+        </div>
+
+        {/* Login Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="text-left">
-            <label
-              htmlFor="email"
-              className="block text-gray-700 font-medium mb-1"
-            >
-              Email
-            </label>
+          <div>
             <input
               type="email"
-              id="email"
               name="email"
-              placeholder="Enter your email"
+              placeholder="Email address"
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
           </div>
-          <div className="text-left">
-            <label
-              htmlFor="password"
-              className="block text-gray-700 font-medium mb-1"
-            >
-              Password
-            </label>
+          <div className="relative">
             <input
               type="password"
-              id="password"
               name="password"
-              placeholder="Enter your password"
+              placeholder="Password"
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
+            <span className="absolute inset-y-0 right-3 flex items-center text-gray-400 cursor-pointer">
+              👁️
+            </span>
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 transition-transform transform hover:scale-105 shadow-md"
+            className="w-full bg-blue-600 text-white font-semibold py-2 rounded-md hover:bg-blue-700 transition"
           >
-            Log In
+            CONTINUE
           </button>
         </form>
 
         {/* Error Message */}
-        {error && (
-          <div className="text-red-600 text-sm font-medium mt-4">{error}</div>
-        )}
+        {error && <div className="text-red-600 text-sm mt-2">{error}</div>}
 
-        <p className="text-gray-600 text-sm mt-6">
-          Don't have an account?{" "}
-          <a
-            href="/signup"
-            className="text-blue-500 font-semibold hover:underline"
+        {/* SSO Login Option */}
+        <div className="mt-4 text-center">
+          <p className="text-gray-500">OR</p>
+          <button className="w-full mt-2 border border-gray-400 py-2 rounded-md flex items-center justify-center">
+            <span className="mr-2">🖥️</span> Login using Google
+          </button>
+        </div>
+
+        {/* Sign Up Button */}
+        <div className="mt-6 text-center">
+          <p className="text-gray-600 text-sm">Don't have an account?</p>
+          <button
+            onClick={() => navigate("/signup")}
+            className="text-blue-500 font-semibold hover:underline mt-1"
           >
-            Sign up
-          </a>
-        </p>
+            Sign Up
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Login;
-
-// import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom"; // Import useNavigate
-
-// const Login = () => {
-//   const [error, setError] = useState("");
-//   const navigate = useNavigate(); // Initialize navigate function
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     const formData = new FormData(e.target);
-//     const email = formData.get("email");
-//     const password = formData.get("password");
-
-//     try {
-//       const response = await fetch("http://localhost:5000/api/users/login", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify({ email, password }),
-//       });
-//       const data = await response.json();
-
-//       if (response.ok) {
-//         // Save the JWT token in localStorage
-//         localStorage.setItem("authToken", data.token);
-//         alert("Login successful!");
-//         navigate("/home"); // Navigate to '/home' after successful login
-//       } else {
-//         setError(data.message); // Set the error message
-//       }
-//     } catch (err) {
-//       console.error(err);
-//       setError("Server error. Please try again.");
-//     }
-//   };
-
-//   return (
-//     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700">
-//       <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md text-center">
-//         <h1 className="text-2xl font-bold text-gray-800 mb-6">Log In</h1>
-//         <form onSubmit={handleSubmit} className="space-y-4">
-//           <div className="text-left">
-//             <label
-//               htmlFor="email"
-//               className="block text-gray-700 font-medium mb-1"
-//             >
-//               Email
-//             </label>
-//             <input
-//               type="email"
-//               id="email"
-//               name="email"
-//               placeholder="Enter your email"
-//               required
-//               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-//             />
-//           </div>
-//           <div className="text-left">
-//             <label
-//               htmlFor="password"
-//               className="block text-gray-700 font-medium mb-1"
-//             >
-//               Password
-//             </label>
-//             <input
-//               type="password"
-//               id="password"
-//               name="password"
-//               placeholder="Enter your password"
-//               required
-//               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-//             />
-//           </div>
-//           <button
-//             type="submit"
-//             className="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 transition-transform transform hover:scale-105 shadow-md"
-//           >
-//             Log In
-//           </button>
-//         </form>
-
-//         {/* Error Message */}
-//         {error && (
-//           <div className="text-red-600 text-sm font-medium mt-4">{error}</div>
-//         )}
-
-//         <p className="text-gray-600 text-sm mt-6">
-//           Don't have an account?{" "}
-//           <a
-//             href="/signup"
-//             className="text-blue-500 font-semibold hover:underline"
-//           >
-//             Sign up
-//           </a>
-//         </p>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Login;

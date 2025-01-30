@@ -4,7 +4,7 @@ export default function HeroWithNavbar() {
       {/* Navbar */}
       <nav className="w-full flex items-center justify-between px-8 py-4">
         <div className="text-[#1E1E1E] font-montserrat font-semibold text-2xl">
-          GENAI LLMOps Services
+          LLMOps Services
         </div>
         <ul className="flex space-x-6 text-[#1E1E1E] font-montserrat font-medium">
           <li className="hover:text-blue-500 cursor-pointer">About</li>
@@ -18,7 +18,7 @@ export default function HeroWithNavbar() {
         {/* Left Section */}
         <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
           <h1 className="text-4xl md:text-5xl font-montserrat font-semibold text-[#1E1E1E] mb-6 leading-snug">
-            GENAI LLMOps Services offers a single plane of glass view to build,
+            LLMOps Services offers a single plane of glass view to build,
             manage, and monitor GenAI and AI Agents workflows
           </h1>
           <button className="bg-[#007BFF] text-white px-6 py-3 rounded-full hover:bg-[#0056b3] font-montserrat font-semibold shadow-md">
