@@ -1,5 +1,5 @@
 import React from "react";
-import StackedBarChart from "./bar-chart"; // Adjust path as needed
+import StackedBarChart from "./bar-chart"; // Ensure this path is correct
 
 const answerRelevancyData = [
   { label: "10.5", lowerValue: 55, upperValue: 40 },
@@ -18,7 +18,7 @@ const OverallLLMMetrics = () => {
       </h2>
 
       <div className="space-y-6">
-        {/* Answer Relevancy Section */}
+        {/* Answer Relevancy Bar Chart */}
         <div>
           <h3 className="text-base font-medium mb-4 text-gray-700">
             Answer Relevancy

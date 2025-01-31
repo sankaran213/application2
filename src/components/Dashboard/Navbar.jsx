@@ -12,29 +12,30 @@ const ResponsiveNavbar = ({ onAdd }) => {
   return (
     <>
       {/* Navbar */}
-      <Navbar appearance="default" className="navbar-container">
-        <Navbar.Brand href="#" className="logo-container">
-          <img src="Logo.png" alt="Company Logo" className="company-logo" />
+      <Navbar appearance="default" className="bg-white shadow-md px-4 py-2">
+        <Navbar.Brand href="#" className="flex items-center">
+          <img src="Logo.png" alt="Company Logo" className="h-10 mr-4" />
         </Navbar.Brand>
-        <Nav className="desktop-nav">
+        <Nav className="hidden md:flex space-x-6">
           <Nav.Item href="/home">Home</Nav.Item>
           <Nav.Item href="#">About</Nav.Item>
           <Nav.Item href="#">Contact</Nav.Item>
         </Nav>
-        <Nav pullRight>
+        <Nav pullRight className="flex items-center space-x-4">
           <Button
             onClick={onAdd}
-            className="desktop-nav add-btn"
+            className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold px-4 py-2 rounded-md flex items-center space-x-2 hover:scale-105"
             appearance="primary"
           >
-            <PlusIcon /> Add
+            <PlusIcon />
+            <span>Add</span>
           </Button>
           {/* Hamburger Menu for Mobile */}
           <IconButton
             icon={<MenuIcon />}
             appearance="subtle"
             onClick={toggleDrawer}
-            className="mobile-nav"
+            className="block md:hidden"
           />
         </Nav>
       </Navbar>
@@ -51,66 +52,15 @@ const ResponsiveNavbar = ({ onAdd }) => {
             <Nav.Item href="#">Contact</Nav.Item>
             <Button
               onClick={onAdd}
-              className="add-btn-mobile"
+              className="mt-4 w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold px-4 py-2 rounded-md"
               appearance="primary"
             >
-              <PlusIcon /> Add
+              <PlusIcon />
+              Add
             </Button>
           </Nav>
         </Drawer.Body>
       </Drawer>
-
-      {/* Styling */}
-      <style jsx>{`
-        .navbar-container {
-          background-color: white;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-          padding: 0 20px;
-        }
-        .logo-container {
-          display: flex;
-          align-items: center;
-        }
-        .company-logo {
-          height: 40px;
-          margin-right: 20px;
-        }
-        .desktop-nav {
-          display: none;
-        }
-        .mobile-nav {
-          display: flex;
-        }
-        .add-btn {
-          background: linear-gradient(90deg, #00c6ff, #0072ff);
-          border: none;
-          color: white;
-          font-weight: bold;
-          padding: 8px 16px;
-          border-radius: 4px;
-          transition: all 0.3s ease;
-          display: flex;
-          align-items: center;
-          gap: 8px;
-        }
-        .add-btn:hover {
-          background: linear-gradient(90deg, #0072ff, #00c6ff);
-          transform: scale(1.05);
-          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .add-btn-mobile {
-          margin-top: 16px;
-          width: 100%;
-        }
-        @media (min-width: 768px) {
-          .desktop-nav {
-            display: flex;
-          }
-          .mobile-nav {
-            display: none;
-          }
-        }
-      `}</style>
     </>
   );
 };

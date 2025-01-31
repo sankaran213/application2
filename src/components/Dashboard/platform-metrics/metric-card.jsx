@@ -2,10 +2,7 @@ import React from "react";
 
 const MetricCard = ({ title, value }) => {
   return (
-    <div
-      className="bg-white rounded-lg p-5 shadow-lg flex flex-col justify-center items-center"
-      style={{ width: "314px", height: "155.12px" }}
-    >
+    <div className="bg-white rounded-lg p-5 shadow-lg flex flex-col justify-center items-center w-full max-w-[314px] h-auto">
       {/* Title */}
       <div className="text-sm text-gray-500 font-medium">{title}</div>
 

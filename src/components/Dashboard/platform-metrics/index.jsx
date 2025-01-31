@@ -4,10 +4,8 @@ import MetricCard from "./metric-card";
 const PlatformMetrics = () => {
   return (
     <div
-      className="rounded-lg shadow-lg p-6"
+      className="rounded-lg shadow-lg p-6 max-w-[350px] w-full h-[626px] mx-auto"
       style={{
-        width: "350px",
-        height: "626px",
         background: "rgba(255, 255, 255, 0.5)", // Translucent white background
         backdropFilter: "blur(10px)", // Frosted glass effect
       }}
