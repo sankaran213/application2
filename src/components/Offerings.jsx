@@ -236,7 +236,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Offerings = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate("/onboard-genai", "/llm-observability");
 
   const cards = [
     {
@@ -244,7 +244,6 @@ const Offerings = () => {
       description: "Expert Guidance for Scalable and Efficient LLM Operations",
       route: "/llmops-consulting",
       icon: "icons/eval.png",
-
       bigCard: true,
     },
     {
@@ -299,7 +298,7 @@ const Offerings = () => {
     {
       title: "Prompt Management",
       description: "Manage prompts templates efficiently using prompt library",
-      route: "/finops",
+      route: "/prompt-management",
       icon: "icons/prompt.png",
       playButton: true,
     },
@@ -307,54 +306,49 @@ const Offerings = () => {
       title: "LLM Router",
       description:
         "Use the best fit LLM for prompts and response in a multi-LLM environment",
-      route: "/finops",
+      route: "/llm-router",
       icon: "icons/router.png",
       playButton: true,
     },
     {
-      title: "AI Agents playground",
+      title: "AI Agents Playground",
       description: "Build an AI agent app with few clicks",
-      route: "/finops",
+      route: "/ai-agents-playground",
       icon: "icons/playground.png",
       playButton: true,
     },
     {
       title: "AI Agent Observability",
       description: "Unified view to monitor AI agent app metrics",
-      route: "/finops",
+      route: "/ai-agent-observability",
       icon: "icons/Observation.png",
       playButton: true,
     },
   ];
 
   return (
-    <div>
-      <h2 className="text-3xl font-bold text-center text-black mb-8 bg-clip-text mt-10">
+    <div className="container mx-auto px-6 py-10">
+      <h2 className="text-3xl font-bold text-center text-black mb-8">
         LLMOps Offerings
       </h2>
 
-      <div className="grid grid-cols-4 grid-rows-2 gap-8 p-6">
-        {/* Large Card containing Two Small Cards */}
-        <div
-          className="row-span-2 bg-white shadow-lg rounded-lg p-6 flex flex-col gap-8"
-          style={{ width: "318px", height: "707px" }}
-        >
-          {[0, 1].map((index) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {/* Large Card (First Two Items) */}
+        <div className="lg:row-span-2 bg-white shadow-lg rounded-lg p-6 py-8 flex flex-col gap-8">
+          {cards.slice(0, 2).map((card, index) => (
             <div
               key={index}
-              className="bg-white shadow-lg p-4 rounded-lg flex flex-col justify-between items-start text-left"
-              style={{ width: "266px", height: "300px" }}
+              className="bg-white shadow-md -mt-2 p-6 rounded-lg flex flex-col items-start justify-between h-[320px] w-full"
             >
-              <h3 className="text-lg font-semibold mt-1">
-                {cards[index].title}
-              </h3>
-              <p className="text-sm text-gray-600 -mt-10">
-                {cards[index].description}
-              </p>
-              {/* "Click Here" for small cards */}
+              <div>
+                <h3 className="text-lg font-semibold">{card.title}</h3>
+                <p className="text-sm text-gray-600 mt-2 flex-grow">
+                  {card.description}
+                </p>
+              </div>
               <a
-                href={cards[index].route}
-                className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 mt-3"
+                href={card.route}
+                className="text-blue-600 hover:text-blue-800 font-medium"
               >
                 Click Here
               </a>
@@ -362,42 +356,42 @@ const Offerings = () => {
           ))}
         </div>
 
-        {/* Remaining Cards with Play Button Only */}
+        {/* Small Cards */}
         {cards.slice(2).map((card, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between items-start text-left"
-            style={{ width: "318px", height: "335px" }}
+            className="bg-white shadow-lg rounded-lg p-10 flex flex-col justify-between"
           >
-            {/* Unique Logo */}
-            <img
-              src={card.icon} // Use the correct `card` object from the map
-              alt={card.title}
-              className="w-12 h-12"
-            />
-            <h3 className="text-lg font-semibold mt-1">{card.title}</h3>
-            <p className="text-sm text-gray-600 mt-1">{card.description}</p>
-            {/* Play Button Only for remaining cards */}
-            <a
-              href={card.route}
-              className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 mt-3"
-            >
-              <div className="w-8 h-8 rounded-full border border-black flex items-center justify-center transition-all duration-300 hover:bg-black hover:border-black">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="black" // Ensures the polygon is black
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="transition-all duration-300 hover:stroke-white" // Changes color on hover
-                >
-                  <polygon points="5 3 19 12 5 21 5 3" />
-                </svg>
-              </div>
-            </a>
+            {/* Icon */}
+            <img src={card.icon} alt={card.title} className="w-12 h-12" />
+            <h3 className="text-lg font-semibold mt-3">{card.title}</h3>
+            <p className="text-sm text-gray-600 mt-0 pb-3">
+              {card.description}
+            </p>
+
+            {/* Play Button */}
+            {card.playButton && (
+              <a
+                href={card.route}
+                className="flex items-center mt-4 text-blue-600 hover:text-blue-800"
+              >
+                <div className="w-10 h-10 rounded-full border border-black flex items-center justify-center transition hover:bg-black hover:border-black">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="black"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="transition hover:stroke-white"
+                  >
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </div>
+              </a>
+            )}
           </div>
         ))}
       </div>

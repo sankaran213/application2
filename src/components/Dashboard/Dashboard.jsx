@@ -9,7 +9,6 @@ import ResponsiveNavbar from "./Navbar";
 import Sidebar from "./sidebar";
 import { Navigate, useNavigate } from "react-router-dom";
 
-
 export default function Dashboard() {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
   const navigate = useNavigate();
@@ -42,28 +41,27 @@ export default function Dashboard() {
 
           <div className="grid grid-cols-12 gap-6">
             {/* Left Column */}
-            <div className="col-span-3">
+            <div className="col-span-12 md:col-span-3">
               <PlatformMetrics />
-              {/* <ApiKeyForm /> */}
             </div>
 
             {/* Middle Column */}
-            <div className="col-span-6">
+            <div className="col-span-12 md:col-span-6">
               <OverallPerformance />
             </div>
 
             {/* Right Column */}
-            <div className="col-span-3">
+            <div className="col-span-12 md:col-span-3">
               <LLMMetrics />
             </div>
 
             {/* Bottom Left */}
-            <div className="col-span-4">
+            <div className="col-span-12 md:col-span-4">
               <OverallLLMMetrics />
             </div>
 
             {/* Bottom Right */}
-            <div className="col-span-8">
+            <div className="col-span-12 md:col-span-8">
               <PromptPerformance />
             </div>
           </div>

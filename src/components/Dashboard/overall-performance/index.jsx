@@ -20,16 +20,18 @@ const OverallPerformance = () => {
   };
 
   return (
-    <div className="bg-white bg-opacity-50 shadow-lg rounded-lg p-6 backdrop-blur-md w-[705px] h-[626px]">
+    <div className="bg-white bg-opacity-50 shadow-lg rounded-lg p-6 backdrop-blur-md w-full max-w-[705px] h-auto md:h-[626px]">
       <div className="text-sm text-gray-500 mb-2">LLM Metrics</div>
       <h2 className="text-xl font-semibold mb-8">Overall Performance</h2>
 
-      {/* 2x2 Grid Layout */}
-      <div className="grid grid-cols-2 gap-6 place-items-center">
+      {/* 2x2 Grid Layout, responsive */}
+      <div className="grid grid-cols-2 gap-6 place-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
         {circleLabels.map((label, index) => (
           <div
             key={index}
-            className={`flip-card ${flippedCard === index ? "flipped" : ""}`}
+            className={`flip-card ${
+              flippedCard === index ? "flipped" : ""
+            } w-full`}
           >
             <div className="flip-card-inner">
               {/* Front Side */}

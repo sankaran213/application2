@@ -66,8 +66,8 @@ const StackedBarChart = ({ data }) => {
   };
 
   return (
-    <div className="w-full flex justify-center">
-      <div className="w-[90%] sm:w-[300px] h-[200px]">
+    <div className="w-full flex justify-center items-center">
+      <div className="w-full sm:w-[350px] md:w-[400px] lg:w-[500px] xl:w-[600px] h-[250px] md:h-[300px]">
         <Bar data={chartData} options={options} />
       </div>
     </div>
