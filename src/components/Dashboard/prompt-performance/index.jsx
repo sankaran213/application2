@@ -35,9 +35,9 @@ const promptData = [
 
 const PromptPerformance = () => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg max-w-6xl mx-auto">
+    <div className="bg-white p-6 rounded-lg shadow-lg max-w-6xl mx-auto min-h-[480px]">
       {/* Header */}
-      <h2 className="text-2xl font-semibold text-blue-600 mb-4 text-left">
+      <h2 className="text-2xl font-semibold text-black mb-4 text-left">
         Prompt Performance
       </h2>
 

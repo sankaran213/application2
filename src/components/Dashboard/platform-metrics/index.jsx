@@ -11,7 +11,7 @@ const PlatformMetrics = () => {
       }}
     >
       {/* Title */}
-      <h2 className="text-blue-500 font-semibold text-lg text-center mb-6">
+      <h2 className="text-black font-semibold text-lg text-center mb-6">
         Platform Metrics
       </h2>
 
