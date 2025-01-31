@@ -231,7 +231,6 @@
 //     </div>
 //   );
 // }
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -297,60 +296,57 @@ const Offerings = () => {
     },
     {
       title: "Prompt Management",
-      description: "Manage prompts templates efficiently using prompt library",
-      route: "/finops",
+      description: "Manage prompt templates efficiently using a prompt library",
+      route: "/prompt-management",
       icon: "icons/prompt.png",
       playButton: true,
     },
     {
       title: "LLM Router",
       description:
-        "Use the best fit LLM for prompts and response in a multi-LLM environment",
-      route: "/finops",
+        "Use the best-fit LLM for prompts and response in a multi-LLM environment",
+      route: "/llm-router",
       icon: "icons/router.png",
       playButton: true,
     },
     {
-      title: "AI Agents playground",
+      title: "AI Agents Playground",
       description: "Build an AI agent app with few clicks",
-      route: "/finops",
+      route: "/ai-agents-playground",
       icon: "icons/playground.png",
       playButton: true,
     },
     {
       title: "AI Agent Observability",
       description: "Unified view to monitor AI agent app metrics",
-      route: "/finops",
+      route: "/ai-agent-observability",
       icon: "icons/Observation.png",
       playButton: true,
     },
   ];
 
   return (
-    <div>
-      <h2 className="text-3xl font-bold text-center text-black mb-8 bg-clip-text mt-10">
+    <div className="p-6">
+      {/* Section Title */}
+      <h2 className="text-3xl font-bold text-center text-black mb-8 mt-10">
         LLMOps Offerings
       </h2>
 
-      <div className="grid grid-cols-4 grid-rows-2 gap-8 p-6">
-        {/* Large Card containing Two Small Cards */}
-        <div
-          className="row-span-2 bg-white shadow-lg rounded-lg p-6 flex flex-col gap-8"
-          style={{ width: "318px", height: "707px" }}
-        >
+      {/* Grid Layout for Cards */}
+      <div className="grid grid-cols-4 gap-8">
+        {/* Large Card Containing Two Small Cards */}
+        <div className="row-span-2 w-full max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
           {[0, 1].map((index) => (
             <div
               key={index}
-              className="bg-white shadow-lg p-4 rounded-lg flex flex-col justify-between items-start text-left"
-              style={{ width: "266px", height: "300px" }}
+              className="bg-white shadow-md p-12 h-80 rounded-lg flex flex-col justify-between items-start text-left mb-4"
             >
-              <h3 className="text-lg font-semibold mt-0">
+              <h3 className="text-xl font-semibold text-black m-0">
                 {cards[index].title}
               </h3>
-              <h4 className="text-sm text-gray-600 mt-0">
+              <p className="text-sm text-gray-600 m-0 break-words">
                 {cards[index].description}
-              </h4>
-              {/* "Click Here" for small cards */}
+              </p>
               <a
                 href={cards[index].route}
                 className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 mt-3"
@@ -361,42 +357,45 @@ const Offerings = () => {
           ))}
         </div>
 
-        {/* Remaining Cards with Play Button Only */}
+        {/* Remaining Cards with Play Button at the Bottom */}
         {cards.slice(2).map((card, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between items-start text-left"
-            style={{ width: "318px", height: "335px" }}
+            className="relative w-full max-w-sm p-6 min-h-80 bg-white border border-gray-200 rounded-lg shadow-md flex flex-col justify-between"
           >
-            {/* Unique Logo */}
-            <img
-              src={card.icon} // Use the correct `card` object from the map
-              alt={card.title}
-              className="w-12 h-12"
-            />
-            <h3 className="text-lg font-semibold mt-0">{card.title}</h3>
-            <h4 className="text-sm text-gray-600 mt-0">{card.description}</h4>
-            {/* Play Button Only for remaining cards */}
-            <a
-              href={card.route}
-              className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 mt-3"
-            >
-              <div className="w-8 h-8 rounded-full border border-black flex items-center justify-center transition-all duration-300 hover:bg-black hover:border-black">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="black" // Ensures the polygon is black
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="transition-all duration-300 hover:stroke-white" // Changes color on hover
-                >
-                  <polygon points="5 3 19 12 5 21 5 3" />
-                </svg>
-              </div>
-            </a>
+            {/* Card Content */}
+            <div>
+              <img
+                src={card.icon}
+                alt={card.title}
+                className="w-12 h-12 mb-3"
+              />
+              <h3 className="text-xl font-semibold text-black">{card.title}</h3>
+              <p className="text-sm mt-2 text-gray-600 break-words">
+                {card.description}
+              </p>
+            </div>
+
+            {/* Play Button (Only for Cards with `playButton: true`) */}
+            {card.playButton && (
+              <a href={card.route} className="absolute left-6 bottom-10">
+                <div className="w-10 h-10 rounded-full border border-black flex items-center justify-center transition-all duration-300 hover:bg-black hover:border-black">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="black"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="transition-all duration-300 hover:stroke-white"
+                  >
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </div>
+              </a>
+            )}
           </div>
         ))}
       </div>
