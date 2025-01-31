@@ -4,12 +4,12 @@ const faqs = [
   {
     question: "What is LLMOps services ?",
     answer:
-      " LLMops services is a comprehensive platform for managing and monitoring GenAI applications...",
+      " LLMOps services is a comprehensive platform for managing and monitoring GenAI applications...",
   },
   {
     question: "How LLMOps services works?",
     answer:
-      " LLMops services works by offering a unified platform that simplifies the deployment, management, and monitoring of GenAI applications. It integrates various tools for model deployment, performance tracking, and optimization, ensuring smooth operation and scalability across AI models.",
+      " LLMOps services works by offering a unified platform that simplifies the deployment, management, and monitoring of GenAI applications. It integrates various tools for model deployment, performance tracking, and optimization, ensuring smooth operation and scalability across AI models.",
   },
   {
     question: "How to choose an offering from LLMOps Services?",
