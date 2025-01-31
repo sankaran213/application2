@@ -35,7 +35,7 @@ const ApiKeyForm = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
       <form
         onSubmit={handleSubmit}
-        className="bg-white rounded-2xl shadow-xl w-full max-w-lg p-8 transform transition-all duration-300 hover:shadow-2xl"
+        className="bg-white rounded-2xl shadow-xl w-full max-w-lg p-8 transition-all duration-300 hover:shadow-2xl"
       >
         <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
           API Configuration
@@ -44,9 +44,11 @@ const ApiKeyForm = () => {
 
         <div className="space-y-6">
           <div className="form-group">
-            <label className="label">Region</label>
+            <label className="label block text-sm font-medium text-gray-700 mb-2">
+              Region
+            </label>
             <input
-              className="input-field"
+              className="input-field w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-gray-400"
               type="text"
               value={region}
               onChange={(e) => setRegion(e.target.value)}
@@ -55,9 +57,11 @@ const ApiKeyForm = () => {
           </div>
 
           <div className="form-group">
-            <label className="label">API Key</label>
+            <label className="label block text-sm font-medium text-gray-700 mb-2">
+              API Key
+            </label>
             <input
-              className="input-field"
+              className="input-field w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-gray-400"
               type="text"
               value={apiKey}
               onChange={(e) => setApiKey(e.target.value)}
@@ -67,9 +71,11 @@ const ApiKeyForm = () => {
 
           {aValues.map((value, index) => (
             <div className="form-group" key={index}>
-              <label className="label">A{index + 1}</label>
+              <label className="label block text-sm font-medium text-gray-700 mb-2">
+                A{index + 1}
+              </label>
               <input
-                className="input-field"
+                className="input-field w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-gray-400"
                 type="text"
                 value={value}
                 onChange={(e) => handleAChange(index, e.target.value)}
@@ -79,9 +85,11 @@ const ApiKeyForm = () => {
           ))}
 
           <div className="form-group">
-            <label className="label">Select LLM</label>
+            <label className="label block text-sm font-medium text-gray-700 mb-2">
+              Select LLM
+            </label>
             <select
-              className="input-field pr-10 cursor-pointer"
+              className="input-field w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:border-gray-400 pr-10 cursor-pointer"
               value={selectedLLM}
               onChange={(e) => setSelectedLLM(e.target.value)}
             >
@@ -113,31 +121,12 @@ const ApiKeyForm = () => {
               isSubmitting
                 ? "bg-blue-400 cursor-not-allowed"
                 : "bg-blue-600 hover:bg-blue-700 hover:scale-[1.02]"
-            } transform shadow-md hover:shadow-lg`}
+            } shadow-md hover:shadow-lg`}
           >
             {isSubmitting ? "Submitting..." : "Save Configuration"}
           </button>
         </div>
       </form>
-      <style jsx>{`
-        .label {
-          @apply block text-sm font-medium text-gray-700 mb-2 transition-all duration-300;
-        }
-
-        .input-field {
-          @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none 
-                 focus:ring-2 focus:ring-blue-500 focus:border-transparent 
-                 transition-all duration-300 hover:border-gray-400;
-        }
-
-        .form-group {
-          @apply relative transition-all duration-300;
-        }
-
-        .form-group:focus-within .label {
-          @apply text-blue-600;
-        }
-      `}</style>
     </div>
   );
 };
