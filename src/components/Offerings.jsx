@@ -298,7 +298,7 @@ const Offerings = () => {
     {
       title: "Prompt Management",
       description: "Manage prompts templates efficiently using prompt library",
-      route: "/prompt-management",
+      route: "/finops",
       icon: "icons/prompt.png",
       playButton: true,
     },
@@ -306,45 +306,54 @@ const Offerings = () => {
       title: "LLM Router",
       description:
         "Use the best fit LLM for prompts and response in a multi-LLM environment",
-      route: "/llm-router",
+      route: "/finops",
       icon: "icons/router.png",
       playButton: true,
     },
     {
-      title: "AI Agents Playground",
+      title: "AI Agents playground",
       description: "Build an AI agent app with few clicks",
-      route: "/ai-agents-playground",
+      route: "/finops",
       icon: "icons/playground.png",
       playButton: true,
     },
     {
       title: "AI Agent Observability",
       description: "Unified view to monitor AI agent app metrics",
-      route: "/ai-agent-observability",
+      route: "/finops",
       icon: "icons/Observation.png",
       playButton: true,
     },
   ];
 
   return (
-    <div className="container mx-auto px-6 py-10">
-      <h2 className="text-3xl font-bold text-center text-black mb-8">
+    <div>
+      <h2 className="text-3xl font-bold text-center text-black mb-8 bg-clip-text mt-10">
         LLMOps Offerings
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {/* Large Card (First Two Items) */}
-        <div className="lg:row-span-2 bg-white shadow-lg rounded-lg p-6 py-16 flex flex-col gap-6">
-          {cards.slice(0, 2).map((card, index) => (
+      <div className="grid grid-cols-4 grid-rows-2 gap-8 p-6">
+        {/* Large Card containing Two Small Cards */}
+        <div
+          className="row-span-2 bg-white shadow-lg rounded-lg p-6 flex flex-col gap-8"
+          style={{ width: "318px", height: "707px" }}
+        >
+          {[0, 1].map((index) => (
             <div
               key={index}
-              className="bg-white lg:row-span-4 shadow-md p-4 rounded-lg flex flex-col justify-between"
+              className="bg-white shadow-lg p-4 rounded-lg flex flex-col justify-between items-start text-left"
+              style={{ width: "266px", height: "300px" }}
             >
-              <h3 className="text-lg font-semibold">{card.title}</h3>
-              <p className="text-sm text-gray-600 mt-2">{card.description}</p>
+              <h3 className="text-lg font-semibold mt-0">
+                {cards[index].title}
+              </h3>
+              <h4 className="text-sm text-gray-600 mt-0">
+                {cards[index].description}
+              </h4>
+              {/* "Click Here" for small cards */}
               <a
-                href={card.route}
-                className="text-blue-600 hover:text-blue-800 mt-3"
+                href={cards[index].route}
+                className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 mt-3"
               >
                 Click Here
               </a>
@@ -352,42 +361,42 @@ const Offerings = () => {
           ))}
         </div>
 
-        {/* Small Cards */}
+        {/* Remaining Cards with Play Button Only */}
         {cards.slice(2).map((card, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg rounded-lg p-10 flex flex-col justify-between"
+            className="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between items-start text-left"
+            style={{ width: "318px", height: "335px" }}
           >
-            {/* Icon */}
-            <img src={card.icon} alt={card.title} className="w-12 h-12" />
-            <h3 className="text-lg font-semibold mt-3">{card.title}</h3>
-            <p className="text-sm text-gray-600 mt-0 pb-3">
-              {card.description}
-            </p>
-
-            {/* Play Button */}
-            {card.playButton && (
-              <a
-                href={card.route}
-                className="flex items-center mt-4 text-blue-600 hover:text-blue-800"
-              >
-                <div className="w-10 h-10 rounded-full border border-black flex items-center justify-center transition hover:bg-black hover:border-black">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="black"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="transition hover:stroke-white"
-                  >
-                    <polygon points="5 3 19 12 5 21 5 3" />
-                  </svg>
-                </div>
-              </a>
-            )}
+            {/* Unique Logo */}
+            <img
+              src={card.icon} // Use the correct `card` object from the map
+              alt={card.title}
+              className="w-12 h-12"
+            />
+            <h3 className="text-lg font-semibold mt-0">{card.title}</h3>
+            <h4 className="text-sm text-gray-600 mt-0">{card.description}</h4>
+            {/* Play Button Only for remaining cards */}
+            <a
+              href={card.route}
+              className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 mt-3"
+            >
+              <div className="w-8 h-8 rounded-full border border-black flex items-center justify-center transition-all duration-300 hover:bg-black hover:border-black">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="black" // Ensures the polygon is black
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="transition-all duration-300 hover:stroke-white" // Changes color on hover
+                >
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+              </div>
+            </a>
           </div>
         ))}
       </div>
