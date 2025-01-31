@@ -1,6 +1,9 @@
 export default function HeroWithNavbar() {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-[#EAF6FF] to-[#a8d6eb] flex flex-col">
+    <div
+      className="min-h-screen bg-cover bg-center"
+      style={{ backgroundImage: `url('Group 1707478079.png')` }}
+    >
       {/* Navbar */}
       <nav className="w-full flex items-center justify-between px-6 py-4 md:px-8">
         <div className="text-[#1E1E1E] font-montserrat font-semibold text-2xl">
@@ -18,9 +21,9 @@ export default function HeroWithNavbar() {
       </nav>
 
       {/* Hero Section */}
-      <div className="flex-1 flex flex-col md:flex-row items-center justify-between px-6 py-12 max-w-7xl mx-auto">
+      <div className="flex flex-col md:flex-row items-center justify-between px-6 py-12 max-w-7xl mx-auto">
         {/* Left Section */}
-        <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0 px-4 md:px-0">
+        <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0 px-4 py-36 md:px-0">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-montserrat font-semibold text-[#1E1E1E] mb-6 leading-snug">
             LLMOps Services offers a single plane of glass view to build,
             manage, and monitor GenAI and AI Agents workflows
@@ -31,13 +34,13 @@ export default function HeroWithNavbar() {
         </div>
 
         {/* Right Section */}
-        <div className="md:w-7/12 flex justify-center md:justify-end px-4 md:px-0">
+        {/* <div className="md:w-7/12 flex justify-center md:justify-end px-4 md:px-0">
           <img
             src="Dashboard Image.png" // Path to the uploaded image
             alt="Dashboard Preview"
             className="w-full max-w-md md:max-w-lg rounded-lg"
-          />
-        </div>
+          /> */}
+        {/* </div> */}
       </div>
     </div>
   );
