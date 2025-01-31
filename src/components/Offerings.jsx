@@ -236,7 +236,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Offerings = () => {
-  const navigate = useNavigate("/onboard-genai", "/llm-observability");
+  const navigate = useNavigate();
 
   const cards = [
     {
@@ -334,21 +334,17 @@ const Offerings = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {/* Large Card (First Two Items) */}
-        <div className="lg:row-span-2 bg-white shadow-lg rounded-lg p-6 py-8 flex flex-col gap-8">
+        <div className="lg:row-span-2 bg-white shadow-lg rounded-lg p-6 py-16 flex flex-col gap-6">
           {cards.slice(0, 2).map((card, index) => (
             <div
               key={index}
-              className="bg-white shadow-md -mt-2 p-6 rounded-lg flex flex-col items-start justify-between h-[320px] w-full"
+              className="bg-white lg:row-span-4 shadow-md p-4 rounded-lg flex flex-col justify-between"
             >
-              <div>
-                <h3 className="text-lg font-semibold">{card.title}</h3>
-                <p className="text-sm text-gray-600 mt-2 flex-grow">
-                  {card.description}
-                </p>
-              </div>
+              <h3 className="text-lg font-semibold">{card.title}</h3>
+              <p className="text-sm text-gray-600 mt-2">{card.description}</p>
               <a
                 href={card.route}
-                className="text-blue-600 hover:text-blue-800 font-medium"
+                className="text-blue-600 hover:text-blue-800 mt-3"
               >
                 Click Here
               </a>
